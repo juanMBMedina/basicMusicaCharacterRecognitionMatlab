@@ -1,7 +1,7 @@
 clc,clear,close
 fs = 44100;
 p = 360;
-Nom = 'Salsipuedes.jpg';
+Nom = '..\static\jpg\Salsipuedes.jpg';
 tic()
 [sound,k] = Top(fs,p,Nom);
 toc()
@@ -17,7 +17,3 @@ play(p)
 % NomfF=[Nom(1:k) 'F.wav'];
 % [yp1,fsp1] = wavread(NomfF);
 % get_fft(yp1,fsp1);
-
-
-
- 

@@ -1,10 +1,9 @@
-clc,clear
+clc,clear,close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Creacion del DataSet.
 input = [];
 targets= [];
 TamRed = [30 15];
-
 for i = 1 : 3    
     for n = 1 : 700
     Nombre = ['ImRed' num2str(n) '.jpg'];
@@ -16,11 +15,8 @@ for i = 1 : 3
     end
     
 end
-
-
 for i = 0 : 6
     loc = targets == i;
     target(i+1,:) = loc;    
 end  
-
-save('DataSet.mat','input','target')
+%save('DataSet.mat','input','target')

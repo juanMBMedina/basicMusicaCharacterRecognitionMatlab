@@ -1,9 +1,9 @@
 function [x,f] = get_fft(y,fs)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% L : tamano de la señal de audio.
-% nfft : Puntos de la fft.
-% f : Vector, de frecuencias.
-% x : Vector, de fft
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % L : tamano de la seï¿½al de audio.
+    % nfft : Puntos de la fft.
+    % f : Vector, de frecuencias.
+    % x : Vector, de fft
     L = length(y);
     nfft = 2^nextpow2(L);
     x = fft(y,nfft)/L;

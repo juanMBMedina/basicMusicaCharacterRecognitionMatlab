@@ -1,7 +1,7 @@
-function [] = valid(k,n)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Muestra por pantalla que figura reconocio...
-% la red neuronal.
+function valid(k,n)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Muestra por pantalla que figura reconocio...
+    % la red neuronal.
     if k == 1
         disp(['Figura: ' num2str(n) ' es: Redonda' ])
     end
