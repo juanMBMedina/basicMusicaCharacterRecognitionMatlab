@@ -5,7 +5,8 @@ function [Imf] = Figuras(Fig,Imf)
     TI = size(Imf);
     [Lf, ~] = bwlabel(Fig);
     propf = regionprops(Lf);
-    % imshow(Fig)
+    figure(2)
+    imshow(Fig)
     for n = 1:length(propf)     
         rectangle('Position',propf(n).BoundingBox,...
                   'EdgeColor','g','LineWidth',1)

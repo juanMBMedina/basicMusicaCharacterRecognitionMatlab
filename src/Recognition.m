@@ -8,6 +8,7 @@ function [note,duration] = Recognition(Fig,Imf,lin,Frec)
     TI = size(Imf);
     [Lf, ~] = bwlabel(Fig);
     propf = regionprops(Lf);
+    figure(3)
     imshow(Imf)
     for n = 1:length(propf)
         rectangle('Position',propf(n).BoundingBox,...

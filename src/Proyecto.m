@@ -3,7 +3,7 @@ fs = 44100;
 p = 360;
 Nom = '..\static\jpg\Salsipuedes.jpg';
 tic()
-[sound,k] = Top(fs,p,Nom);
+[sound] = Top(fs,p,Nom);
 toc()
 p = audioplayer(sound,fs);
 play(p)

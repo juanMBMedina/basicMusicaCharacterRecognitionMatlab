@@ -1,15 +1,5 @@
 function [note,duration] = Process(Pv,Ph,Imb,Frec)
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Calcula la derivada de las proyecciones.
-    dPv = deriv(Pv);
-    dPh = deriv(Ph);
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %Encuenta los picos en las derivadas necesarios, lineas del pentagrama y
-    %Comienzo y  final del pentagrama.
-    [dPvp,dPvl] = findpeaks(dPv,'MinPeakHeight',0.2*max(dPv));
-    [dPhp,dPhl] = findpeaks(abs(dPh));
-    %[dPvl,dPhl] = Puntos(Pv,Ph);
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    [dPvl,dPhl] = Puntos(Pv,Ph);
     %Encuentra los intervalos posibles donde estan los renglones del penta-
     %grama.
     k = 0;
@@ -58,7 +48,7 @@ function [note,duration] = Process(Pv,Ph,Imb,Frec)
         Fig  = imdilate(Fig,strel('square',2)); 
         Fig  = imdilate(Fig,ones(5,2));
         %\=============================================================/%    
-        [Pv,Ph]  = ProyHY(Imf);
+        [Pv,Ph]  = ProyHY(Imf, 0);
         [lin,~]  = Puntos(Pv,Ph);
         %[DataSet] = GetDataSet(Fig,Imf);
         [xn,yn]  = Recognition(Fig,Imf,lin,Frec);
